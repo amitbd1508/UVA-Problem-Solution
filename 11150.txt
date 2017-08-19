@@ -1,0 +1,27 @@
+#include<stdio.h>
+
+int main()
+{
+	int n,ex,count;
+
+	while(scanf("%d",&n)==1)
+	{
+                count=n;
+
+		while(n>=3)
+                {
+			ex=n%3;
+			n=n/3;
+			count=count+n;
+			n=n+ex;
+                
+		}
+		if(n==2)
+		count++;
+
+		printf("%d\n",count);
+        }
+
+	
+return 0;
+}

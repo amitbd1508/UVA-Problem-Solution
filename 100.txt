@@ -1,0 +1,50 @@
+#include<stdio.h>
+
+int loop(long j);
+main()
+{
+int n,n2,i,j,max,step,temp;
+
+do{
+scanf("%d%d",&n,&n2);
+
+if(feof(stdin))break;
+
+printf("%d %d",n,n2);
+if(n>n2)
+{temp=n;n=n2;n2=temp;}
+
+max=0;
+
+for(i=n;i<=n2;++i)
+{
+step=loop(i); 
+if(step>max)
+max=step; 
+}
+printf(" %d\n",max);
+
+}while(!feof(stdin));
+
+}
+
+int loop(long j)
+{
+
+int s=1;
+
+while(j!=1)
+{
+
+if((j%2)==1) 
+j=3*j+1;
+
+else 
+j=j/2;
+
+++s;
+
+}
+return(s);
+
+}

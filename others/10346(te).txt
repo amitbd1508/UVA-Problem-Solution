@@ -1,0 +1,21 @@
+#include<stdio.h>
+
+int main()
+{
+	long n,k,count;
+
+	while(scanf("%ld%ld",&n,&k)==2)
+	{
+		count=n;
+
+		while(n>=k)
+		{
+			n=n-k;
+			count++;
+			n++;
+		}
+
+		printf("%ld\n",count);	
+        }
+return 0;
+}

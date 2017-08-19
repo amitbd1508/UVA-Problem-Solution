@@ -1,0 +1,27 @@
+#include<cstdio>
+#include<cstring>
+#include<algorithm>
+using namespace std;
+int main()
+{
+	char a[100];
+	while(gets(a))
+	{
+		if(a[0]=='#')
+			break;
+		int len;
+		len=strlen(a);
+		if(next_permutation(a,a+len))
+		{
+			puts(a);
+		
+		}
+		else
+			printf("No Successor\n");
+
+	}
+
+
+	return 0;
+}
+//acepted

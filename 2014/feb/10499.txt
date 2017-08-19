@@ -1,0 +1,19 @@
+#include<cstdio>
+#include<cstring>
+#include<iostream>
+using namespace std;
+int main()
+{
+    long long n;
+    cin>>n;
+
+    while(n>=0)
+    {
+        if(n>1)
+            cout<<n*25<<"%"<<endl;
+        else
+            cout<<0<<endl;
+        cin>>n;
+    }
+    return 0;
+}

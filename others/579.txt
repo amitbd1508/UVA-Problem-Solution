@@ -1,0 +1,22 @@
+#include<stdio.h>
+#include<stdlib.h>
+
+int main()
+{
+    unsigned long int H,M;
+    float ang,h;
+    
+    while(1)
+    {
+        scanf("%ld:%ld",&H,&M);
+        if(!(H+M))
+			break;
+        h=(H*60+M)/2.0;
+        M*=6;
+        ang=(h>M)?h-M:M-h;
+        if(ang>180)
+			ang=360-ang;
+        printf("%0.3f\n",ang);
+    }
+    exit(0);
+}

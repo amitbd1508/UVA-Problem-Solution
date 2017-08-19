@@ -1,0 +1,15 @@
+#include<stdio.h>
+int main()
+{
+	int a,b,test,i,res;
+	scanf("%d",&test);
+	for(i=1;i<=test;i++)
+	{
+		scanf("%d%d",&a,&b);
+		res=(a/3)*(b/3);
+		printf("%d\n",res);
+	
+	}
+
+return 0;
+}

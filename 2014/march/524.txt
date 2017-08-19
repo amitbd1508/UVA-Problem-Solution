@@ -1,0 +1,55 @@
+#include<cmath>
+#include<cstdio>
+ 
+using namespace std;
+ 
+int T = 0, n;
+int seq[20];
+bool isused[20];
+ 
+bool is_prime(int x) 
+{
+    for(int i = 2; i <= sqrt(x); i++)
+        if(x % i == 0) 
+			return false;
+    return true;
+}
+ 
+void recursive(int m) 
+{
+	int i;
+    if(m == n - 1 && is_prime(seq[n - 1] + seq[n])) 
+	{
+        for(i = 0; i < n; i++)
+            
+		{
+			if(i==n-1)
+				printf("%d",seq[i]);
+			else
+				printf("%d ",seq[i]);
+
+		}
+        printf("\n");
+        return;
+    }
+    for(int i = 2; i <= n; i++)
+        if(!isused[i] && is_prime(seq[m] + i)) {
+            isused[i] = true;
+            seq[m + 1] = i;
+            recursive(m + 1);
+            isused[i] = false;
+        }
+}
+ 
+int main() 
+{
+    while(scanf("%d", &n) == 1) 
+	{
+        T++;
+        if(T > 1) printf("\n");
+        seq[0] = seq[n] = 1;
+        printf("Case %d:\n", T);
+        recursive(0);
+    }
+	return 0;
+}

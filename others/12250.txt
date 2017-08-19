@@ -1,0 +1,30 @@
+#include<stdio.h>
+#include<string.h>
+int main()
+{
+	char s[100];
+	int tCase=0;
+	while(1)
+	{
+		
+		tCase++;
+		scanf("%s",s);
+		if(strcmp(s,"#")==0) 
+			break;
+		if(strcmp(s,"HELLO")==0)
+			printf("Case %d: ENGLISH\n",tCase);
+		else if(strcmp(s,"HOLA")==0)
+			printf("Case %d: SPANISH\n",tCase);
+		else if(strcmp(s,"HALLO")==0)
+			printf("Case %d: GERMAN\n",tCase);
+		else if(strcmp(s,"BONJOUR")==0)
+			printf("Case %d: FRENCH\n",tCase);
+		else if(strcmp(s,"CIAO")==0)
+			printf("Case %d: ITALIAN\n",tCase);
+		else if(strcmp(s,"ZDRAVSTVUJTE")==0)
+			printf("Case %d: RUSSIAN\n",tCase);
+		else
+			printf("Case %d: UNKNOWN\n",tCase);
+	}
+return 0;
+}

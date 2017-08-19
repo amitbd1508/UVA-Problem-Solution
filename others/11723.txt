@@ -1,0 +1,22 @@
+#include <stdio.h>
+#include <stdlib.h>
+ 
+int main()
+{
+    int r,n,i=1,result;
+    
+ 
+    while(1)
+    {
+		scanf("%d %d", &r,&n);
+		if(r==0)
+			break;
+        result = (r - 1 ) / n ;
+        if(result > 26)
+            printf("Case %d: impossible\n", i++);
+        else
+            printf("Case %d: %d\n", i++,result);
+        
+    }
+    return 0;
+}

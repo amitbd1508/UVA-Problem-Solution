@@ -1,0 +1,75 @@
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+#include <math.h>
+#include <ctype.h>
+
+int main()
+{
+   int i, j, n ;
+   int sheets[26][4];
+   int s, b, np, p_left, cp, cs, next;
+   enum {FL=0, FR, BL, BR};
+
+   #ifndef ONLINE_JUDGE
+   freopen("637.in", "r", stdin);
+   freopen("637.out", "w", stdout);
+   #endif
+
+   while (scanf("%d", &n) && n) {
+      p_left=n;
+      memset(sheets, 0, sizeof(sheets));
+      s=p_left/4;
+      if (p_left%4)
+         s=p_left/4 + 1;
+
+      cp=1; b=4; cs=1;
+      next=FR;
+
+      do {
+         sheets[cs][next]=cp++;
+         b--;
+         p_left--;
+         if (next==FR) next=BL;
+         else if (next==BR) {
+            next=FL;
+         } else if (next==FL) {
+            next=BR;
+            cs--;
+         } else if (next==BL) {
+            if (b<p_left) {
+               next=FR;
+               cs++;
+               b+=4;
+            } else {
+               next=BR;
+            }
+         }
+      } while(p_left);
+
+      printf("Printing order for %d pages:\n", n);
+      for (cs=1; cs<=s; cs++) {
+         printf("Sheet %d, ", cs);
+         if (sheets[cs][FL]==0)
+            printf("front: Blank,");
+         else
+            printf("front: %d,", sheets[cs][FL]);
+         printf(" %d\n", sheets[cs][FR]);
+
+         if (sheets[cs][BL] || sheets[cs][BR]) {
+            printf("Sheet %d, ", cs);
+            if (sheets[cs][BL]==0)
+               printf("back : Blank, ");
+            else
+               printf("back : %d, ", sheets[cs][BL]);
+
+            if (sheets[cs][BR]==0)
+               printf("Blank\n");
+            else
+               printf("%d\n", sheets[cs][BR]);
+         }
+      }
+   }
+
+   return 0;
+}

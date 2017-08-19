@@ -1,0 +1,25 @@
+#include<stdio.h>
+int main()
+{
+    long mark[1000];
+	long i,c,k=0,n;
+    long double avg,sum,per;
+    
+    scanf("%ld",&c);
+    while(c--)
+    {
+        sum=k=0;
+        scanf("%ld",&n);
+        for(i=0;i<n;i++)
+        {
+            scanf("%ld",&mark[i]);
+            sum=sum+mark[i];
+        }
+        avg=sum/n;
+        for(i=0;i<n;i++)
+            if(mark[i]>avg)k++;
+        per=(k*100.0)/n;
+        printf("%0.3Lf%c\n",per,'%');
+    }
+    return 0;
+}

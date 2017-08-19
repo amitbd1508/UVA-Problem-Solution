@@ -1,0 +1,34 @@
+
+#include<stdio.h>
+#include<stdlib.h>
+
+int main()
+{
+    int h,u,d,f,i;
+    float H,U,F;
+   
+    while(scanf("%d%d%d%d",&h,&u,&d,&f)&&h)
+    {
+        F=float(u*f)/100;
+        H=0;U=u;
+        for(i=1;;i++)
+        {
+            H+=U;
+            U-=F;
+            if(U<0)U=0;
+            if(H>h)
+            {
+                printf("success on day %d\n",i);
+                break;
+            }
+            else
+                H-=d;
+            if(H<0)
+            {
+                printf("failure on day %d\n",i);
+                break;
+            }   
+        }
+    }
+    exit(0);
+}

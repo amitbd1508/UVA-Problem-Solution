@@ -1,0 +1,32 @@
+#include<iostream>
+#include<cstdio>
+#include<cstring>
+using namespace std;
+int main()
+{
+    int input,money;
+    long total=0;
+    char don[10];
+
+    cin>>input;
+
+    while(input--)
+    {
+
+        scanf("%s",don);
+        if(strcmp(don,"donate")==0)
+        {
+            cin>>money;
+            total+=money;
+
+        }
+
+        else
+            cout<<total<<endl;
+
+
+    }
+
+
+    return 0;
+}

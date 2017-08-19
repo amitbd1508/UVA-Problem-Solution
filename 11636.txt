@@ -1,0 +1,28 @@
+#include<stdio.h>
+
+int main()
+{
+	int n,x,paste,tc=0;
+
+	while(scanf("%d",&n)==1)
+	{
+        tc++;
+		x=1;
+		paste=0;
+
+		if(n<0)
+			break;
+        if(n==1)
+			paste=0;
+
+		while(x<n)
+		{
+			x=(x*2);
+            paste++;
+		 }
+
+		 printf("Case %d: %d\n",tc,paste);
+        }
+
+return 0;
+}

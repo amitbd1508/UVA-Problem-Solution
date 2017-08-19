@@ -1,0 +1,20 @@
+#include<stdio.h>
+int main()
+{
+	double x,y,z,temp;
+	while(scanf("%lf%lf",&x,&y)==2)
+	{
+		
+		if(x<y)
+		{
+			temp=x;
+			x=y;
+			y=temp;
+		}
+	
+		z=x-y;
+		printf("%.0lf\n",z);
+
+	}
+return 0;
+}
